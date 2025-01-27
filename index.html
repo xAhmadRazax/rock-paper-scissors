@@ -3,9 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script ></script> -->
+    <link rel="stylesheet" href="./resources/css/styles.css" />
     <title>Document</title>
-    <script src="./resources/js/index.js" defer></script>
+    <!-- <script src="./resources/js/index.js" defer></script> -->
   </head>
-  <body></body>
+  <body class="">
+    <header class="header">
+      <div class="container">
+        <h1 class="header__title">
+          <span>Rock</span>
+          <span>Paper</span>
+          <span>Scissors</span>
+        </h1>
+      </div>
+    </header>
+
+    <main class="">
+      <section class="game-score">
+        <div class="container game-score__container">
+          <div class="round-container">
+            <span>Round: </span>
+            <span data-round class="round">1</span>
+          </div>
+
+          <div class="score-container">
+            <div class="player-score-container">
+              <span>Player: </span>
+              <span data-player-score class="player-score">0</span>
+            </div>
+            <div class="computer-score-container">
+              <span>Computer: </span>
+              <span data-computer-score class="computer-score">0</span>
+            </div>
+            <div class="computer-score-container">
+              <span>Tied: </span>
+              <span data-tied-score class="tied-score">0</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-menu" style="display: none">
+        <ul class="container game-menu__list">
+          <li class="game-menu__item-container">
+            <button
+              data-game-start
+              data-game-resume
+              type="button"
+              class="game-menu__item"
+            >
+              Start
+            </button>
+          </li>
+          <li class="game-menu__item-container">
+            <button data-game-reset type="button" class="game-menu__item">
+              Reset
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-game perspective">
+        <div class="square-box"></div>
+      </section>
+    </main>
+  </body>
 </html>

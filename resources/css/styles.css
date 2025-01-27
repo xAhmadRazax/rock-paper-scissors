@@ -1,0 +1,187 @@
+/* Dancing Script */
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*
+-------------------------------------------------------
+|  MAIN RESET                                         |
+-------------------------------------------------------
+ */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*::after,
+*::before {
+  display: block;
+}
+
+:root {
+  --FF-DANCING-SCRIPT: "Dancing Script", serif;
+  --FF-ROBOTO: "Roboto", serif;
+
+  /* colors */
+  --PRIMARY-COLOR: oklch(0.93 0.12 92.91);
+  --ACCENT-COLOR: oklch(58.69% 0.141 271.37);
+  --PRIMARY-WHITE: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--PRIMARY-COLOR);
+  /* color: #fff; */
+  font-family: var(--FF-ROBOTO);
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+audio,
+picture,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  display: block;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+/* UTILITY */
+
+.perspective {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* 
+------------------------------------------
+|   MAIN HEADER                          |
+------------------------------------------
+*/
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.header::after {
+  content: "";
+  position: absolute;
+  min-width: 15rem;
+  width: 17%;
+  height: 4px;
+  background-color: var(--ACCENT-COLOR);
+  bottom: -8px;
+  border-radius: 3333px;
+  /* margin-inline: auto; */
+}
+.header__title {
+  padding-block-start: 1rem;
+  font-family: var(--FF-DANCING-SCRIPT);
+  font-size: 8.6rem;
+  text-shadow: 6px 6px 3px rgba(0, 0, 0, 0.311);
+  text-align: center;
+}
+
+/* 
+--------------------------------------------------
+|   GAME SCORE                                   |
+--------------------------------------------------
+*/
+
+.game-score {
+  font-size: 1.8rem;
+}
+.game-score__container {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 4em;
+  padding-block-start: 2em;
+}
+
+.score-container {
+  display: flex;
+  gap: 1.5em;
+}
+.player-score,
+.computer-score,
+.tied-score {
+  font-weight: bold;
+}
+
+/* 
+----------------------------------
+|   GAME MENU                    |
+----------------------------------
+*/
+
+.game-menu {
+  margin-block-start: 5rem;
+}
+
+.game-menu__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+.game-menu__item {
+  font-size: 4.5rem;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--FF-DANCING-SCRIPT);
+  color: var(--ACCENT-COLOR);
+}
+
+.game-menu__item:hover {
+  scale: 1.1;
+}
+
+/* main game area */
+
+.square-box {
+  margin-inline-start: 100px;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  transform: translateZ(1px);
+  transform-style: preserve-3d;
+}

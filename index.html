@@ -8,17 +8,50 @@
     <!-- <script src="./resources/js/index.js" defer></script> -->
   </head>
   <body class="">
+    <!-- overlays -->
+    <div class="overlay">
+      <div class="model"></div>
+    </div>
+
+    <!-- header -->
     <header class="header">
       <div class="container">
+        <!--  main title -->
         <h1 class="header__title">
           <span>Rock</span>
           <span>Paper</span>
           <span>Scissors</span>
         </h1>
+        <!-- end of main title -->
+
+        <!-- menu button -->
+        <button
+          data-menu-button
+          class="menu-button scale-zero hide-element"
+          role="button"
+          aria-label="open menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"
+            ></path>
+          </svg>
+        </button>
+
+        <!-- end of menu button -->
       </div>
     </header>
 
+    <!-- end of header -->
+
+    <!-- start of main content -->
     <main class="">
+      <!-- game score-board -->
       <section class="game-score">
         <div class="container game-score__container">
           <div class="round-container">
@@ -42,16 +75,13 @@
           </div>
         </div>
       </section>
+      <!-- end of game score-board -->
 
-      <section class="game-menu" style="display: none">
+      <!-- game menu -->
+      <section data-game-menu class="game-menu">
         <ul class="container game-menu__list">
           <li class="game-menu__item-container">
-            <button
-              data-game-start
-              data-game-resume
-              type="button"
-              class="game-menu__item"
-            >
+            <button data-game-start type="button" class="game-menu__item">
               Start
             </button>
           </li>
@@ -62,10 +92,49 @@
           </li>
         </ul>
       </section>
+      <!-- end of game menu -->
 
-      <section class="main-game perspective">
-        <div class="square-box"></div>
+      <!-- main game area  -->
+
+      <section data-main-game class="main-game">
+        <div class="container">
+          <!-- player choices -->
+          <div class="player-choices slide-to-right scale-zero hide-element">
+            <button data-player-select-rock class="player-choice">
+              <span
+                ><img
+                  src="./resources/imgs/base-rock.webp"
+                  alt="hand symbol of rock"
+              /></span>
+              <span>Rock</span></button
+            ><button data-player-select-paper class="player-choice">
+              <span
+                ><img
+                  src="./resources/imgs/base-paper.webp"
+                  alt="hand symbol of paper" /></span
+              ><span>Paper</span></button
+            ><button data-player-select-scissors class="player-choice">
+              <span
+                ><img
+                  src="./resources/imgs/base-scissors.webp"
+                  alt="hand symbol of scissors" /></span
+              ><span>Scissors</span>
+            </button>
+          </div>
+          <!-- end of player choices -->
+          <!-- each round  game logs -->
+          <div class="game-logs slide-to-left scale-zero hide-element"></div>
+          <!-- end of game logs -->
+        </div>
       </section>
+      <!-- end of main game area -->
     </main>
+    <!-- end of main -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <small>&copy; <time>2025</time> RPS, ALL RIGHT RESERVED! </small>
+    </footer>
+    <!-- end of footer -->
   </body>
 </html>

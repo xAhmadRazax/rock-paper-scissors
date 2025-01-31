@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./resources/css/styles.css" />
     <title>Document</title>
-    <!-- <script src="./resources/js/index.js" defer></script> -->
+    <script src="./resources/js/index.js" defer></script>
   </head>
   <body class="">
     <!-- overlays -->
-    <div class="overlay">
-      <div class="model"></div>
+    <div data-overlay class="overlay">
+      <div data-model class="model">
+        <!-- <p class="model-text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+          molestias sunt tempora vel.
+        </p>
+        <button>OK</button> -->
+      </div>
     </div>
-
     <!-- header -->
     <header class="header">
       <div class="container">
@@ -27,7 +32,8 @@
         <!-- menu button -->
         <button
           data-menu-button
-          class="menu-button scale-zero hide-element"
+          data-slide="right"
+          class="menu-button slide-to-right hide-element"
           role="button"
           aria-label="open menu"
         >
@@ -78,15 +84,23 @@
       <!-- end of game score-board -->
 
       <!-- game menu -->
-      <section data-game-menu class="game-menu">
+      <section data-game-menu data-slide="left" class="game-menu">
         <ul class="container game-menu__list">
           <li class="game-menu__item-container">
-            <button data-game-start type="button" class="game-menu__item">
+            <button
+              data-game-start-button
+              type="button"
+              class="game-menu__item"
+            >
               Start
             </button>
           </li>
           <li class="game-menu__item-container">
-            <button data-game-reset type="button" class="game-menu__item">
+            <button
+              data-game-reset-button
+              type="button"
+              class="game-menu__item"
+            >
               Reset
             </button>
           </li>
@@ -99,21 +113,25 @@
       <section data-main-game class="main-game">
         <div class="container">
           <!-- player choices -->
-          <div class="player-choices slide-to-right scale-zero hide-element">
-            <button data-player-select-rock class="player-choice">
+          <div
+            data-player-choices
+            data-slide="right"
+            class="player-choices slide-to-right hide-element"
+          >
+            <button data-player-select="rock" class="player-choice">
               <span
                 ><img
                   src="./resources/imgs/base-rock.webp"
                   alt="hand symbol of rock"
               /></span>
               <span>Rock</span></button
-            ><button data-player-select-paper class="player-choice">
+            ><button data-player-select="paper" class="player-choice">
               <span
                 ><img
                   src="./resources/imgs/base-paper.webp"
                   alt="hand symbol of paper" /></span
               ><span>Paper</span></button
-            ><button data-player-select-scissors class="player-choice">
+            ><button data-player-select="scissors" class="player-choice">
               <span
                 ><img
                   src="./resources/imgs/base-scissors.webp"
@@ -123,7 +141,11 @@
           </div>
           <!-- end of player choices -->
           <!-- each round  game logs -->
-          <div class="game-logs slide-to-left scale-zero hide-element"></div>
+          <div
+            data-game-logs
+            data-slide="left"
+            class="game-logs slide-to-left hide-element"
+          ></div>
           <!-- end of game logs -->
         </div>
       </section>

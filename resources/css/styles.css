@@ -41,6 +41,7 @@ body {
   background-color: var(--PRIMARY-COLOR);
   /* color: #fff; */
   font-family: var(--FF-ROBOTO);
+  line-height: 1.5;
 }
 
 input,
@@ -82,18 +83,18 @@ a {
 /* UTILITY */
 
 .slide-to-left {
-  transform: translateX(-100%);
+  transform: translateX(-100%) translateY(100px) scale(0);
 }
 .slide-to-right {
-  transform: translateX(100%);
+  transform: translateX(100%) translateY(100px) scale(0);
 }
-.scale-zero {
+/* .scale-zero {
   scale: 0;
-}
+} */
 
 .hide-element {
   height: 0;
-  width: 0;
+  /* width: 0; */
   pointer-events: none;
   visibility: hidden;
   /* overflow: hidden; */
@@ -151,7 +152,7 @@ main {
   right: 12%;
   cursor: pointer;
 
-  transition: all 0.3s ease-out;
+  transition: all 0.3s cubic-bezier(0.72, -0.86, 0, 1.59);
 }
 
 /* 
@@ -189,6 +190,7 @@ main {
 
 .game-menu {
   margin-block-start: 5rem;
+  transition: all 0.5s cubic-bezier(0.72, -0.86, 0, 1.59);
 }
 
 .game-menu__list {
@@ -228,6 +230,8 @@ main {
   justify-content: center;
   align-items: center;
   gap: 2.8rem;
+
+  transition: all 0.5s cubic-bezier(0.72, -0.86, 0, 1.59);
 }
 .player-choice {
   display: flex;
@@ -237,7 +241,7 @@ main {
   border: none;
   cursor: pointer;
   max-width: 17.6rem;
-  transition: all 0.3s ease-out;
+  transition: all 0.2s ease-out;
   border: 2px solid transparent;
   border-radius: 11px;
 }
@@ -266,6 +270,14 @@ main {
   background-color: aliceblue;
   height: 16rem;
   margin-inline: auto;
+  overflow-y: auto;
+  padding: 1.5rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  font-size: 1.6rem;
+  transition: all 0.5s cubic-bezier(0.72, -0.86, 0, 1.59);
 }
 
 /*
@@ -284,4 +296,51 @@ main {
 .footer small {
   font-size: inherit;
   font-weight: 500;
+}
+
+/* overlays and model */
+
+.overlay.open {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #0000008f;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay.open > .model {
+  width: 80%;
+  max-width: 60rem;
+  height: 16rem;
+  background-color: #fff;
+  border-radius: 9px;
+  box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.505);
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  /* display: flex;
+  flex-direction: column;
+  gap: 2rem; */
+  text-align: center;
+}
+
+.model p {
+  margin-block-end: 2rem;
+}
+.overlay.open > .model button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: var(--ACCENT-COLOR);
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.model button:active {
+  scale: 0.95;
 }
